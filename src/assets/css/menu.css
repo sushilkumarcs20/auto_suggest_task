@@ -9,6 +9,7 @@
 
 .navbar .search-bar .form-outline {
     width: 70%;
+    position: relative;
 }
 
 .navbar .searchInputNeighbor {
@@ -38,4 +39,24 @@
 .navbar #searchInput {
     border-radius: 0;
     height: 100%;
+}
+
+div.suggestions { 
+    width: 100%;
+    display: block; 
+    top: 50px ;
+}
+
+div.suggestions > div {
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+div.suggestions > div > div{
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+div.suggestions > div > div:hover{
+    background-color: aliceblue;
 }
