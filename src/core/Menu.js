@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import logo from "./../assets/images/logo.png"
 import "./../assets/css/menu.css";
 import { autoPopulate, searchData } from './helper/medicineData';
+import { useCart, useMedicine } from './helper/store';
 
 const Menu = (props) => {
+    const { cartState } = useCart();
+    const { medicineDispatch } = useMedicine();
+
     const searchInput = useRef(null);
     const [result, setResult] = useState([]);
     const [listView, setListView] = useState(false);
@@ -46,7 +50,7 @@ const Menu = (props) => {
                                 <div>
                                     {
                                         result.map((value, index) => {
-                                            return <div onMouseOver={() => searchInput.current.value = value.name} key={index}>{value.name}</div>
+                                            return <div onMouseOver={() => searchInput.current.value = value} key={index}>{value}</div>
                                         })
                                     }
                                 </div>
@@ -54,7 +58,7 @@ const Menu = (props) => {
                         }
                     </div>
                     <div className="searchInputNeighbor">
-                        <button type="button" className="btn btn-search-bar">
+                        <button onClick={() => { medicineDispatch({ type: "getMatchedItems", term: searchInput.current.value }) }} type="button" className="btn btn-search-bar">
                             <i className="fas fa-search theme-color"></i>
                         </button>
                     </div>
@@ -71,7 +75,7 @@ const Menu = (props) => {
                         <li className="nav-item mx-3 checkoutCartIconParent">
                             <Link className="nav-link" to="#">
                                 <i className="fas fa-shopping-cart"></i>
-                                <span className="cartItemCount"></span>
+                                <span className="cartItemCount">{cartState.count}</span>
                             </Link>
                         </li>
                         <li className="nav-item profile">

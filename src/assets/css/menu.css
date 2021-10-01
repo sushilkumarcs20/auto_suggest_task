@@ -33,6 +33,8 @@
 }
 
 .navbar .pincodeInput {
+    border: 0;
+    background-color: rgb(229, 231, 233);
     width: 60px;
 }
 
@@ -41,22 +43,38 @@
     height: 100%;
 }
 
-div.suggestions { 
+.navbar div.suggestions { 
     width: 100%;
     display: block; 
     top: 50px ;
 }
 
-div.suggestions > div {
+.navbar div.suggestions > div {
     max-height: 150px;
     overflow-y: scroll;
 }
 
-div.suggestions > div > div{
+.navbar div.suggestions > div > div{
     padding: 0 10px;
     cursor: pointer;
 }
 
-div.suggestions > div > div:hover{
+.navbar div.suggestions > div > div:hover{
     background-color: aliceblue;
+}
+
+.navbar .checkoutCartIconParent {
+    position: relative;    
+}
+
+.navbar .cartItemCount {
+    position: absolute;
+    color: white;
+    background-color: red;
+    top: 40%;
+    left: 55%;
+    width: 20px;
+    font-size: 12px;
+    border-radius: 15px;
+    text-align: center;
 }

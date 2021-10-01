@@ -322,23 +322,45 @@ const myData = [
 ]
 
 export const autoPopulate = () => {
-  if (window !== 'undefined') {
+  if (typeof window !== undefined) {
     localStorage.setItem('medicineData', JSON.stringify(myData));
     alert("Your data has been uploaded");
   }
 }
 
 export const searchData = (term) => {
-  console.log('Searching Item', term);
-  if(window !== 'undefined') {
-    const medicineData = JSON.parse(localStorage.getItem('medicineData'));
-    let responseData = [];
-    medicineData.forEach(element => {
-      if(element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
-        console.log("Found item", element.name);
-        responseData.push(element);
+  if(typeof window !== undefined) {
+    const stringData = localStorage.getItem('medicineData');
+    if(stringData) {
+      const medicineData = JSON.parse(stringData);
+      let responseData = [];
+      medicineData.forEach(element => {
+        if(element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
+          responseData.push(element.name);
+        }
+      });
+      return responseData;
+    }
+    return [];
+  }
+}
+
+export const getData = (term) => {
+  if(typeof window !== undefined) {
+    const stringData = localStorage.getItem('medicineData');
+    if(stringData) {
+      const medicineData = JSON.parse(stringData);
+      let responseData = [];
+      if(term === '') {
+        return medicineData;
       }
-    });
-    return responseData;
+      medicineData.forEach(element => {
+        if(element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
+          responseData.push(element);
+        }
+      });
+      return responseData;
+    }
+    return [];
   }
 }
