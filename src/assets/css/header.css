@@ -19,3 +19,16 @@
 .extended-header-text div {
   font-size: 11px;
 }
+
+.extended-header .extra-nav {
+  background-color: white;
+}
+
+.extended-header .extra-nav ul{
+  padding-left: 0;
+}
+
+.extended-header .extra-nav ul a{
+  font-size: 14.5px;
+  color: black;
+}
