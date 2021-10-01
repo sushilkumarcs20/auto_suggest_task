@@ -1,0 +1,41 @@
+.logo {
+    height: 60px;
+    width: 200px;
+}
+
+.navbar .search-bar {
+    justify-content: center;
+}
+
+.navbar .search-bar .form-outline {
+    width: 70%;
+}
+
+.navbar .searchInputNeighbor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0px;
+    background-color: rgb(229, 231, 233);
+}
+
+.navbar .searchInputNeighbor:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.navbar .searchInputNeighbor:last-child {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.navbar .pincodeInputParent {
+    font-size: 11px !important;
+}
+
+.navbar .pincodeInput {
+    width: 60px;
+}
+
+.navbar #searchInput {
+    border-radius: 0;
+    height: 100%;
+}
