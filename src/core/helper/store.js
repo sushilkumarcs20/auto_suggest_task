@@ -1,6 +1,6 @@
 import React, { useReducer, useContext } from "react";
 import { countItemsInCart, addItemToCart, removeItemFromCart, cartDetail } from "./cartHelper";
-import { getData, searchData } from "./medicineData";
+import { getData, searchData, autoPopulate } from "./medicineData";
 
 const CartContext = React.createContext();
 const MedicineContext = React.createContext();
@@ -8,7 +8,7 @@ const MedicineContext = React.createContext();
 let cart = cartDetail();
 const initialCartState = {
     amount: cart.amount,
-    count: cart.count 
+    count: cart.count
 }
 
 const initialMedicineState = {
@@ -32,6 +32,9 @@ const cartReducer = (state, action) => {
             removeItemFromCart(action.item);
             cart = cartDetail();
             return { count: cart.count, amount: cart.amount };
+        case "getCartDetail":
+            cart = cartDetail();
+            return { count: cart.count, amount: cart.amount };
         default:
             return state;
     }
@@ -44,6 +47,9 @@ const medicineReducer = (state, action) => {
                 return state;
             }
             return { data: getData(action.term), term: action.term };
+        case "loadLocalStorage":
+            autoPopulate();
+            return { data: getData(''), term: action.term };
         default:
             return state;
     }

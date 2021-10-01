@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import logo from "./../assets/images/logo.png"
 import "./../assets/css/menu.css";
-import { autoPopulate, searchData } from './helper/medicineData';
+import { searchData } from './helper/medicineData';
 import { useCart, useMedicine } from './helper/store';
 
 const Menu = (props) => {
@@ -69,7 +69,7 @@ const Menu = (props) => {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item active" onClick={() => { autoPopulate() }}>
+                        <li className="nav-item active" onClick={() => { medicineDispatch({type: "loadLocalStorage"}) }}>
                             <Link className="nav-link" to="#"><strong>UPLOAD</strong><span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item mx-3 checkoutCartIconParent">
