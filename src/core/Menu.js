@@ -69,8 +69,8 @@ const Menu = (props) => {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item active" onClick={() => { medicineDispatch({type: "loadLocalStorage"}) }}>
-                            <Link className="nav-link" to="#"><strong>UPLOAD</strong><span className="sr-only">(current)</span></Link>
+                        <li className="nav-item active">
+                            <Link className="nav-link" to="#"><strong>UPLOAD</strong></Link>
                         </li>
                         <li className="nav-item mx-3 checkoutCartIconParent">
                             <Link className="nav-link" to="#">

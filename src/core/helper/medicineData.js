@@ -324,19 +324,27 @@ const myData = [
 export const autoPopulate = () => {
   if (typeof window !== undefined) {
     localStorage.setItem('medicineData', JSON.stringify(myData));
-    alert("Your data has been uploaded");
+    const msg = "Your data has been uploaded";
+    console.log(msg);
+    return msg;
   }
 }
 
 export const searchData = (term) => {
-  if(typeof window !== undefined) {
+  if (typeof window !== undefined) {
     const stringData = localStorage.getItem('medicineData');
-    if(stringData) {
+    if (stringData) {
       const medicineData = JSON.parse(stringData);
       let responseData = [];
       medicineData.forEach(element => {
-        if(element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
-          responseData.push(element.name);
+        try {
+          if (element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
+            responseData.push(element.name);
+          }
+        }
+        catch (e) {
+          console.log(e);
+          return [];
         }
       });
       return responseData;
@@ -346,17 +354,22 @@ export const searchData = (term) => {
 }
 
 export const getData = (term) => {
-  if(typeof window !== undefined) {
+  if (typeof window !== undefined) {
     const stringData = localStorage.getItem('medicineData');
-    if(stringData) {
+    if (stringData) {
       const medicineData = JSON.parse(stringData);
       let responseData = [];
-      if(term === '') {
+      if (term === '') {
         return medicineData;
       }
       medicineData.forEach(element => {
-        if(element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
-          responseData.push(element);
+        try {
+          if (element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
+            responseData.push(element);
+          }
+        }
+        catch (e) {
+          return [];
         }
       });
       return responseData;

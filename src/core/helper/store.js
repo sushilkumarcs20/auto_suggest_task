@@ -48,8 +48,8 @@ const medicineReducer = (state, action) => {
             }
             return { data: getData(action.term), term: action.term };
         case "loadLocalStorage":
-            autoPopulate();
-            return { data: getData(''), term: action.term };
+            const msg = autoPopulate();
+            return { data: getData(''), term: action.term, msg: msg };
         default:
             return state;
     }
