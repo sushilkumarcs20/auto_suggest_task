@@ -51,3 +51,19 @@
     top: 86px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .extra-nav .row {
+    justify-content: left;
+  }
+
+  .extra-nav .row div {
+    width: calc((100vw)/2) !important;
+    max-width: calc((100vw)/2) !important;
+    min-width: calc((100vw)/2) !important;
+  }
+
+  .extra-navbar .nav-link {
+    padding: 5px;
+  }
+}

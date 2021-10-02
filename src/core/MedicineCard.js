@@ -38,8 +38,8 @@ const MedicineCard = ({ element, addedInCart }) => {
                     </div>
                     <br />
                     <div className="row">
-                        <div className="col itemManufacturer"><em>Mfr: {element.manufacturer}</em></div>
-                        <div className="col">
+                        <div className="col-12 col-sm itemManufacturer"><em>Mfr: {element.manufacturer}</em></div>
+                        <div className="col-12 col-sm cartFuncDiv">
                             <div className="row">
                                 <div className="col itemQuantity">
                                     QTY:
@@ -47,8 +47,8 @@ const MedicineCard = ({ element, addedInCart }) => {
                                 </div>
                                 {
                                     isInCart
-                                        ? <button className="col text-uppercase btn btn-danger text-light" onClick={() => clickHandler(false)}><strong>Remove</strong></button>
-                                        : <button className="col text-uppercase btn theme-bg text-light" onClick={() => clickHandler(true)}><strong>Add to Cart</strong></button>
+                                        ? <button className="col col-sm text-uppercase btn btn-danger text-light" onClick={() => clickHandler(false)}><strong>Remove</strong></button>
+                                        : <button className="col col-sm text-uppercase btn theme-bg text-light" onClick={() => clickHandler(true)}><strong>Add to Cart</strong></button>
                                 }
                             </div>
                         </div>

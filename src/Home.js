@@ -38,7 +38,7 @@ const Home = () => {
               Showing {medicineState.data.length} results for <strong>{medicineState.term ? medicineState.term : "all medicines"}</strong>
             </div>
             <div className="row">
-              <div className="col-lg-8 col-sm">
+              <div className="col-lg-8 col-md">
                 {
                   medicineState.data &&
                   medicineState.data.map((element, index) => {
@@ -50,7 +50,7 @@ const Home = () => {
                   })
                 }
               </div>
-              <div className="col-lg-4 col-sm">
+              <div className="col-lg-4 col-md">
                 {featureOpen &&
                   <div className="card sideCard">
                     {

@@ -2,3 +2,17 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+@media only screen and (max-width: 768px) {
+  .medicineCard .cartFuncDiv {
+    padding: 15px 15px;
+  }
+
+  .medicineCard .cartFuncDiv .itemQuantity {
+    margin: 0;
+  }
+
+  .medicineCard .cartFuncDiv .row > *{
+    margin: 0 5px;
+  }
+}
