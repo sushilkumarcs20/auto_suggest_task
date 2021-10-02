@@ -1,6 +1,6 @@
 .medicineCard {
-  border-radius: 10px;
-  margin-bottom: 15px;
+  border-radius: 10px !important;
+  margin-bottom: 15px !important;
 }
 
 .medicineDataLabel {
@@ -50,20 +50,30 @@
 }
 
 .sideCard {
+  position: fixed !important;
+  display: flex;
   height: 60vh;
   right: 0;
   bottom: 5%;
   margin: 0 auto;
   width: auto;
-  position: fixed;
-  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 .customHRule {
   border: 2px solid rgb(58 174 176);
   border-radius: 5px;
   width: 75%;
+}
+
+@media only screen and (max-width: 768px) {
+  .featureDiv {
+    position: fixed;
+    top: 50vh;
+    z-index: 2000;
+    right: 5px;
+    font-size: 30px;
+  }
 }

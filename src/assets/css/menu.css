@@ -1,80 +1,95 @@
 .logo {
-    height: 60px;
-    width: 200px;
+  height: 60px;
+  width: 200px;
 }
 
 .navbar .search-bar {
-    justify-content: center;
+  justify-content: center;
 }
 
-.navbar .search-bar .form-outline {
-    width: 70%;
-    position: relative;
+.navbar form {
+  width: 60%;
+  position: relative;
 }
 
 .navbar .searchInputNeighbor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px 0px;
-    background-color: rgb(229, 231, 233);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0px;
+  background-color: rgb(229, 231, 233);
 }
 
 .navbar .searchInputNeighbor:first-child {
-    border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .navbar .searchInputNeighbor:last-child {
-    border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .navbar .pincodeInputParent {
-    font-size: 11px !important;
+  font-size: 11px !important;
 }
 
 .navbar .pincodeInput {
-    border: 0;
-    background-color: rgb(229, 231, 233);
-    width: 60px;
+  border: 0;
+  background-color: rgb(229, 231, 233);
+  width: 60px;
 }
 
 .navbar #searchInput {
-    border-radius: 0;
-    height: 100%;
+  border-radius: 0;
+  height: 100%;
 }
 
-.navbar div.suggestions { 
-    width: 100%;
-    display: block; 
-    top: 50px ;
+.navbar div.suggestions {
+  width: 100%;
+  display: block;
+  top: 50px;
 }
 
 .navbar div.suggestions > div {
-    max-height: 150px;
-    overflow-y: scroll;
+  max-height: 150px;
+  overflow-y: scroll;
 }
 
-.navbar div.suggestions > div > div{
-    padding: 0 10px;
-    cursor: pointer;
+.navbar div.suggestions > div > div {
+  padding: 0 10px;
+  cursor: pointer;
 }
 
-.navbar div.suggestions > div > div:hover{
-    background-color: aliceblue;
+.navbar div.suggestions > div > div:hover {
+  background-color: aliceblue;
 }
 
 .navbar .checkoutCartIconParent {
-    position: relative;    
+  position: relative;
 }
 
 .navbar .cartItemCount {
-    position: absolute;
-    color: white;
-    background-color: red;
-    top: 40%;
-    left: 55%;
-    width: 20px;
-    font-size: 12px;
-    border-radius: 15px;
-    text-align: center;
+  position: absolute;
+  color: white;
+  background-color: red;
+  top: 40%;
+  left: 50%;
+  width: 20px;
+  font-size: 12px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+nav .navbar-nav {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    height: 60px;
+    width: 100px;
+  }
+
+  .navbar form {
+    width: 50%;
+  }
 }

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from 'react-router-dom';
+import { Form, FormControl, Nav, Navbar, Button } from "react-bootstrap";
 import logo from "./../assets/images/logo.png"
 import "./../assets/css/menu.css";
 import { searchData } from './helper/medicineData';
@@ -22,9 +23,12 @@ const Menu = (props) => {
     }
 
     return (
-        < nav className="navbar navbar-expand-lg navbar-custom navbar-dark theme-bg " role="navigation">
-            <div className="container-fluid">
-                <Link className="navbar-brand" to="/"><img src={logo} alt="logo" className="logo" /></Link>
+        <Navbar expand="lg" className="navbar-custom navbar-dark theme-bg container-fluid" role="navigation">
+            <Navbar.Brand href="/"><img src={logo} alt="logo" className="logo" /></Navbar.Brand>
+
+            <Navbar.Toggle aria-controls="navbarScroll" />
+
+            <Navbar.Collapse id="navbarScroll">
                 <div className="input-group search-bar">
                     <div className="searchInputNeighbor d-flex">
                         <div style={{ padding: "10px" }}>
@@ -35,8 +39,8 @@ const Menu = (props) => {
                             <input type="number" name="pincode" id="pincodeInput" className="pincodeInput" defaultValue="110001" />
                         </div>
                     </div>
-                    <div className="form-outline">
-                        <input
+                    <Form className="d-flex">
+                        <Form.Control
                             onFocus={(e) => { setListView(true); inputHandler(e); }}
                             onKeyUp={(e) => { inputHandler(e); }}
                             onBlur={() => setListView(false)} ref={searchInput}
@@ -56,43 +60,29 @@ const Menu = (props) => {
                                 </div>
                             </div>
                         }
-                    </div>
+                    </Form>
                     <div className="searchInputNeighbor">
-                        <button onClick={() => { medicineDispatch({ type: "getMatchedItems", term: searchInput.current.value }) }} type="button" className="btn btn-search-bar">
+                        <Button variant="" onClick={() => { medicineDispatch({ type: "getMatchedItems", term: searchInput.current.value }) }}>
                             <i className="fas fa-search theme-color"></i>
-                        </button>
+                        </Button>
                     </div>
                 </div>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="#"><strong>UPLOAD</strong></Link>
-                        </li>
-                        <li className="nav-item mx-3 checkoutCartIconParent">
-                            <Link className="nav-link" to="#">
-                                <i className="fas fa-shopping-cart"></i>
-                                <span className="cartItemCount">{cartState.count}</span>
-                            </Link>
-                        </li>
-                        <li className="nav-item profile">
-                            <Link className="nav-link" to="#">
-                                <i className="fas fa-user"></i>
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="#">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="#">Register</Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <Nav
+                    className="mr-auto my-2 my-lg-0"
+                >
+                    <Nav.Link href="#"><strong>UPLOAD</strong></Nav.Link>
+                    <Nav.Link href="#" className="mx-3 checkoutCartIconParent">
+                        <i className="fas fa-shopping-cart"></i>
+                        <span className="cartItemCount">{parseInt(cartState.count)}</span>
+                    </Nav.Link>
+                    <Nav.Link href="#" className="profile">
+                        <i className="fas fa-user"></i>
+                    </Nav.Link>
+                    <Nav.Link href="#">Login</Nav.Link>
+                    <Nav.Link href="#">Register</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     );
 }
 

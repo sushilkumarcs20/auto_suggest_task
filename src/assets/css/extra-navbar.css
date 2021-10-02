@@ -1,0 +1,53 @@
+.extra-navbar .row {
+  justify-content: space-between;
+}
+
+.extra-navbar .row .col-sm {
+  max-width: max-content;
+}
+
+.extra-navbar .nav-link .d-flex {
+  align-items: center;
+}
+
+.extra-navbar-icons img {
+  height: 50px;
+}
+
+.extra-navbar-text {
+  padding-left: 5px;
+  color: white;
+}
+
+.extra-navbar-text div {
+  font-size: 11px;
+}
+
+.extra-navbar .extra-nav {
+  background-color: white;
+}
+
+.extra-navbar .extra-nav .row {
+  padding-left: 0;
+}
+
+.extra-navbar .extra-nav .row > * {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.extra-navbar .extra-nav .row a {
+  font-size: 14.5px;
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .extra-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 86px;
+  }
+}

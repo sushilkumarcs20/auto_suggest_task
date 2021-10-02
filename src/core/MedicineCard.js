@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { checkItemInCart } from './helper/cartHelper';
 import { useCart } from "./helper/store";
+import "./../assets/css/medicine-card.css";
 
 const MedicineCard = ({ element, addedInCart }) => {
     const medQuan = useRef(null);
@@ -13,7 +14,7 @@ const MedicineCard = ({ element, addedInCart }) => {
 
     const stateUpdater = async (added) => {
         let type = added ? "addItemToCart" : "removeItemFromCart";
-        await cartDispatch({ type: type, item: { medicine: element, quantity: medQuan.current.value } });
+        await cartDispatch({ type: type, item: { medicine: element, quantity: parseInt(medQuan.current.value) } });
         setIsInCart(checkItemInCart(element))
     }
 

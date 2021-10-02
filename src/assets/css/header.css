@@ -1,34 +1,24 @@
-.extended-header ul {
-  justify-content: space-around;
-  list-style: none;
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 86px;
+  max-height: 86px;
+  min-height: 86px;
 }
 
-.extended-header .nav-link .d-flex {
-  align-items: center;
-}
+@media screen and (max-width: 768px) {
+  .header {
+    position: unset;
+  }
 
-.extended-header-icons img {
-  height: 50px;
-}
-
-.extended-header-text {
-  padding-left: 5px;
-  color: white;
-}
-
-.extended-header-text div {
-  font-size: 11px;
-}
-
-.extended-header .extra-nav {
-  background-color: white;
-}
-
-.extended-header .extra-nav ul{
-  padding-left: 0;
-}
-
-.extended-header .extra-nav ul a{
-  font-size: 14.5px;
-  color: black;
+  .header nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
 }
