@@ -9,9 +9,10 @@ const Home = () => {
   const { medicineState, medicineDispatch } = useMedicine();
   const { cartState } = useCart();
   const [alertMsg, setAlertMsg] = useState(false);
-
+  const alertClass = "alert alert-dismissible fade show alert-" + (alertMsg?.type ? alertMsg.type : "info");
+  
   useEffect(() => {
-    setAlertMsg(medicineState.msg);
+    setAlertMsg(medicineState.res);
   }, [medicineState]);
   
   const loadStorage = () => {
@@ -43,8 +44,8 @@ const Home = () => {
                   {
                     alertMsg &&
                     <>
-                      <div className="alert alert-success alert-dismissible fade show" role="alert">
-                        {medicineState.msg}
+                      <div className={alertClass} role="alert">
+                        {alertMsg.msg}
                         <button onClick={() => setAlertMsg(false)} type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                       </div>
                     </>

@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { checkItemInCart } from './helper/cartHelper';
 import { useCart } from "./helper/store";
 
 const MedicineCard = ({ element, addedInCart }) => {
-    const [isInCart, setIsInCart] = useState(addedInCart);
-    const { cartDispatch } = useCart();
+    const medQuan = useRef(null);
+    const [isInCart, setIsInCart] = useState(checkItemInCart(element));
+    const { cartState, cartDispatch } = useCart();
 
     const clickHandler = (added) => {
-        setIsInCart(added);
+        stateUpdater(added);
+    }
+
+    const stateUpdater = async (added) => {
         let type = added ? "addItemToCart" : "removeItemFromCart";
-        cartDispatch({ type: type, item: element });
+        await cartDispatch({ type: type, item: { medicine: element, quantity: medQuan.current.value } });
+        setIsInCart(checkItemInCart(element))
     }
 
     return (
@@ -37,7 +42,7 @@ const MedicineCard = ({ element, addedInCart }) => {
                             <div className="row">
                                 <div className="col itemQuantity">
                                     QTY:
-                                    <input type="number" min="1" defaultValue="1" />
+                                    <input ref={medQuan} type="number" min="1" defaultValue="1" />
                                 </div>
                                 {
                                     isInCart

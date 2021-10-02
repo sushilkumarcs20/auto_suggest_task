@@ -323,10 +323,27 @@ const myData = [
 
 export const autoPopulate = () => {
   if (typeof window !== undefined) {
+    const stringData = localStorage.getItem('medicineData');
+    let res = {};
+    if (stringData) {
+      const medicineData = JSON.parse(stringData);
+      if (medicineData.length > 0) {
+        res = {
+          msg: "You have already uploaded the data",
+          type: 'warning'
+        }
+        console.log(res);
+        return res;
+      }
+    }
+    
     localStorage.setItem('medicineData', JSON.stringify(myData));
-    const msg = "Your data has been uploaded";
-    console.log(msg);
-    return msg;
+    res = {
+      msg: "Your data has been uploaded",
+      type: 'success'
+    }
+    console.log(res);
+    return res;
   }
 }
 
