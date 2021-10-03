@@ -1,6 +1,6 @@
 import React, { useReducer, useContext } from "react";
-import { countItemsInCart, addItemToCart, removeItemFromCart, cartDetail } from "./cartHelper";
-import { getData, searchData, autoPopulate } from "./medicineData";
+import { addItemToCart, removeItemFromCart, cartDetail } from "./cartHelper";
+import { getData, autoPopulate } from "./medicineData";
 
 const CartContext = React.createContext();
 const MedicineContext = React.createContext();

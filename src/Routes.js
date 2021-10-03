@@ -1,15 +1,14 @@
-import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import { CommonProvider } from './core/helper/store';
-import Home from "./Home";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { CommonProvider } from './components/helper/store';
+import Home from "./components/Home";
 
 const Routes = (props) => {
     return (
         <Router>
-            <Switch>
-                <CommonProvider>
-                    <Route exact path="/" component={Home}></Route>
-                </CommonProvider>
-            </Switch>
+            {/* Common Provider is component having MedicineProvider and CartProvider to use context */}
+            <CommonProvider>
+                <Route exact path="/" component={Home}></Route>
+            </CommonProvider>
         </Router>
     )
 }

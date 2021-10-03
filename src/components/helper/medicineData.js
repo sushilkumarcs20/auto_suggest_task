@@ -98,7 +98,7 @@ const myData = [
   {
     "name": "Fosamax",
     "genericName": "alendronate",
-    "disease": "O",
+    "disease": "osteoporosis and Paget's disease",
     "price": 1000,
     "manufacturer": "SPORT PHARMA USA",
     "prescriptionNeeded": true
@@ -178,7 +178,7 @@ const myData = [
   {
     "name": "Paxil",
     "genericName": "paroxetine",
-    "disease": "",
+    "disease": "obsessive-compulsive disorde",
     "price": 778,
     "manufacturer": "ALLERGAN PHARMA CO.",
     "prescriptionNeeded": false
@@ -336,7 +336,7 @@ export const autoPopulate = () => {
         return res;
       }
     }
-    
+
     localStorage.setItem('medicineData', JSON.stringify(myData));
     res = {
       msg: "Your data has been uploaded",

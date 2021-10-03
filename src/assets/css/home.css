@@ -1,18 +1,18 @@
-.medicineCard {
+.medicine-card {
   border-radius: 10px !important;
   margin-bottom: 15px !important;
 }
 
-.medicineDataLabel {
+.medicine-data-label {
   padding: 15px;
 }
 
-.itemPrice {
+.item-price {
   float: right;
   color: #f35477;
 }
 
-.itemDisease {
+.item-disease {
   background-color: rgb(242, 244, 247);
   padding: 5px;
   margin-right: 5px;
@@ -20,7 +20,7 @@
   font-size: 12px;
 }
 
-.itemPrescriptionNeeded {
+.item-prescription-needed {
   background-color: rgb(184 234 235);
   color: rgb(58 174 176);
   padding: 5px;
@@ -28,12 +28,12 @@
   font-size: 12px;
 }
 
-.itemManufacturer {
+.item-manufacturer {
   text-transform: uppercase;
   font-size: 12px;
 }
 
-.itemQuantity {
+.item-quantity {
   display: flex;
   padding: 0;
   margin: 0 20px 0 80px;
@@ -43,13 +43,13 @@
   border: 1px solid black;
 }
 
-.itemQuantity input {
+.item-quantity input {
   border: 0;
   padding: 0 10px;
   width: 65px;
 }
 
-.sideCard {
+.side-card {
   position: fixed !important;
   display: flex;
   height: 60vh;
@@ -62,18 +62,44 @@
   border-radius: 10px !important;
 }
 
-.customHRule {
+.custom-rule {
   border: 2px solid rgb(58 174 176);
   border-radius: 5px;
   width: 75%;
 }
 
-@media only screen and (max-width: 768px) {
-  .featureDiv {
+@media only screen and (max-width: 1000px) {
+  .feature-open {
     position: fixed;
-    top: 50vh;
-    z-index: 2000;
+    top: 48vh;
+    z-index: 2051;
     right: 5px;
     font-size: 30px;
+  }
+
+  .side-card-parent.side-card-open {
+    width: unset !important;
+    height: unset !important;
+    position: fixed;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    overflow-y: hidden !important;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2050;
+    pointer-events: stroke !important;
+  }
+
+  .side-card {
+    height: 60vh;
+    right: 0;
+    bottom: 20vh;
+    top: 20vh;
+    margin: 0 auto;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px !important;
   }
 }

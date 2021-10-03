@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { checkItemInCart } from './helper/cartHelper';
 import { useCart } from "./helper/store";
 import "./../assets/css/medicine-card.css";
 
-const MedicineCard = ({ element, addedInCart }) => {
+const MedicineCard = ({ element }) => {
     const medQuan = useRef(null);
     const [isInCart, setIsInCart] = useState(checkItemInCart(element));
-    const { cartState, cartDispatch } = useCart();
+    const { cartDispatch } = useCart();
 
     const clickHandler = (added) => {
         stateUpdater(added);
@@ -18,30 +18,39 @@ const MedicineCard = ({ element, addedInCart }) => {
         setIsInCart(checkItemInCart(element))
     }
 
+    const titleCase = (str) => {
+        let words = str.toLowerCase().split(" ");
+
+        for (let i = 0; i < words.length; i++) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1, words[i].length);
+        }
+
+        return words.join(" ");
+    }
+
     return (
         <>
-            {/* <img src="..." className="card-img-top" alt="..." /> */}
             <div className="card-body">
                 <div className="container">
                     <div>
                         <h5>
-                            <span className="itemName">{element.name}</span>
-                            <span className="itemPrice">₹ {element.price}</span>
+                            <span className="itemName">{titleCase(element.name)}</span>
+                            <span className="item-price">₹ {element.price}</span>
                         </h5>
                         <h5>
-                            <span className="itemDisease">{element.disease}</span>
+                            <span className="item-disease">{titleCase(element.disease)}</span>
                             {
                                 element.prescriptionNeeded &&
-                                <span className="itemPrescriptionNeeded">"Rx required"</span>
+                                <span className="item-prescription-needed">Rx required</span>
                             }
                         </h5>
                     </div>
                     <br />
                     <div className="row">
-                        <div className="col-12 col-sm itemManufacturer"><em>Mfr: {element.manufacturer}</em></div>
-                        <div className="col-12 col-sm cartFuncDiv">
+                        <div className="col-12 col-sm item-manufacturer"><em>Mfr: {element.manufacturer}</em></div>
+                        <div className="col-12 col-sm cart-func-div">
                             <div className="row">
-                                <div className="col itemQuantity">
+                                <div className="col item-quantity">
                                     QTY:
                                     <input ref={medQuan} type="number" min="1" defaultValue="1" />
                                 </div>

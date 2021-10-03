@@ -1,18 +1,22 @@
-.medicineCard .row > * {
+.medicine-card .row > * {
   padding-left: 0;
   padding-right: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .medicineCard .cartFuncDiv {
+.medicine-card .item-manufacturer {
+  padding-left: 0.75em;
+}
+
+@media only screen and (max-width: 1000px) {
+  .medicine-card .cart-func-div {
     padding: 15px 15px;
   }
 
-  .medicineCard .cartFuncDiv .itemQuantity {
+  .medicine-card .cart-func-div .item-quantity {
     margin: 0;
   }
 
-  .medicineCard .cartFuncDiv .row > *{
+  .medicine-card .cart-func-div .row > * {
     margin: 0 5px;
   }
 }

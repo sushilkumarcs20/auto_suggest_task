@@ -69,57 +69,57 @@ function ExtraNavbar(props) {
             <div className="extra-nav">
                 <div className="container">
                     <Row>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 COVID Essentials
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Diabetes
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Eyewear
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Ayush
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Fitness
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Personal Care
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Mom & Baby
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Devices
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Surgicals
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Sexual Wellness
                             </Link>
                         </Col>
-                        <Col sm>
+                        <Col xs={4} sm={3} md>
                             <Link className="nav-link" to="#">
                                 Treatments
                             </Link>
