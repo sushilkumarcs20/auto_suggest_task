@@ -44,7 +44,7 @@ const medicineReducer = (state, action) => {
     switch (action.type) {
         case "getMatchedItems":
             if (!action.term) {
-                return state;
+                return { data: getData('')};
             }
             return { data: getData(action.term), term: action.term };
         case "loadLocalStorage":

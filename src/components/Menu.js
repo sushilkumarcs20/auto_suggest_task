@@ -44,7 +44,8 @@ const Menu = (props) => {
                         <Form.Control
                             onFocus={(e) => { setListView(true); inputHandler(e); }}
                             onKeyUp={(e) => { inputHandler(e); }}
-                            onBlur={() => setListView(false)} ref={searchInput}
+                            onBlur={() => setListView(false)}
+                            ref={searchInput}
                             id="search-input"
                             type="search"
                             className="form-control"

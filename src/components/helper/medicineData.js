@@ -332,7 +332,6 @@ export const autoPopulate = () => {
           msg: "You have already uploaded the data",
           type: 'warning'
         }
-        console.log(res);
         return res;
       }
     }
@@ -342,7 +341,6 @@ export const autoPopulate = () => {
       msg: "Your data has been uploaded",
       type: 'success'
     }
-    console.log(res);
     return res;
   }
 }
@@ -353,6 +351,10 @@ export const searchData = (term) => {
     if (stringData) {
       const medicineData = JSON.parse(stringData);
       let responseData = [];
+      if (term === '')  {
+        return medicineData;
+      }
+
       medicineData.forEach(element => {
         try {
           if (element.name.toLowerCase().search(term.toLowerCase()) !== (-1)) {
