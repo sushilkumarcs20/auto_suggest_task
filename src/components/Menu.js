@@ -23,6 +23,11 @@ const Menu = (props) => {
         setResult(responseData);
     }
 
+    const formHandler = (e) => {
+        e.preventDefault();
+        medicineDispatch({ type: "getMatchedItems", term: searchInput.current.value });
+    }
+
     return (
         <Navbar expand="lg" className="navbar-custom navbar-dark theme-bg container-fluid" role="navigation">
             <Navbar.Brand href="/"><img src={logo} alt="logo" className="logo" /></Navbar.Brand>
@@ -40,7 +45,7 @@ const Menu = (props) => {
                             <input type="number" name="pincode" id="pincode-input" className="pincode-input" defaultValue="110001" />
                         </div>
                     </div>
-                    <Form className="d-flex">
+                    <Form className="d-flex" onSubmit={(e) => formHandler(e)}>
                         <Form.Control
                             onFocus={(e) => { setListView(true); inputHandler(e); }}
                             onKeyUp={(e) => { inputHandler(e); }}
